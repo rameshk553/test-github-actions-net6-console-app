@@ -1,0 +1,1 @@
+# test-github-actions-net6-console-app
