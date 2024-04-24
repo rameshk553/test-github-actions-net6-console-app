@@ -21,4 +21,4 @@ jobs:
         run: echo "Version number is ${{ github.event.inputs.version }}!"
 
       - name: Print Baseline Message
-        run: echo "Baseline message is ${{ github.event.inputs.baselinemessage}}
+        run: echo "Baseline message is ${{ github.event.inputs.baselinemessage  }}"
