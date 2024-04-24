@@ -1,8 +1,17 @@
-name: Test Input Parameters
+name: Test Input Parameters Workflow
 
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Who to greet"
-        default: "World"
+        description: "Who to greet"  # Description for the input parameter
+        required: true  # Set to true if the input is mandatory
+        default: "World"  # Default value if no input is provided
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greet Someone
+        run: echo "Hello, ${{ github.event.inputs.name }}!"
