@@ -1,17 +1,24 @@
-name: Test Input Parameters Workflow
+name: Test Baseline Input Parameters Workflow
 
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: "Who to greet"  # Description for the input parameter
+      version:
+        description: "Version Number"  # Description for the input parameter
         required: true  # Set to true if the input is mandatory
-        default: "World"  # Default value if no input is provided
+        default: "1.0.0.0"  # Default value if no input is provided
+      baselinemessage:
+        description: "Baseline Message" #Description for the input parameter
+        required: true #set to true if the input is madatory
+        default: "Baselining"
 
 jobs:
-  greet:
+  printinputparmeters:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Greet Someone
-        run: echo "Hello, ${{ github.event.inputs.name }}!"
+      - name: Print Version Number
+        run: echo "Version number is ${{ github.event.inputs.version }}!"
+
+      - name: Print Baseline Message
+        run: echo "Baseline message is ${{ github.event.inputs.baselinemessage}}
