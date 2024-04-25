@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version Number"  # Description for the input parameter
+        type: choice
+        description: "Select a version number"  # Description for the input parameter
         required: true  # Set to true if the input is mandatory
-        default: "1.0.0.0"  # Default value if no input is provided
+        options:
+        - Major
+        - Minor
+        - Build
+        - Revision      
       baselinemessage:
         description: "Baseline Message" #Description for the input parameter
         required: true #set to true if the input is madatory
